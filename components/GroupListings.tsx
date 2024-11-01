@@ -1,5 +1,6 @@
 import Colors from "@/constants/Colors";
 import { GroupType } from "@/types/groupType";
+import { Ionicons } from "@expo/vector-icons";
 import {
   StyleSheet,
   View,
@@ -16,6 +17,15 @@ const GroupListings = ({ listing }: Props) => {
     return (
       <View style={styles.item}>
         <Image source={{ uri: item.image }} style={styles.image} />
+        <View>
+          <Text style={styles.itemTxt}>{item.name}</Text>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Ionicons name="star" size={20} color={Colors.primaryColor} />
+            <Text style={styles.itemRating}>{item.rating}</Text>
+            <Text style={styles.itemReviews}>({item.reviews})</Text>
+            <Text></Text>
+          </View>
+        </View>
       </View>
     );
   };
@@ -37,6 +47,7 @@ const styles = StyleSheet.create({
     width: 80,
     height: 100,
     borderRadius: 10,
+    marginRight: 10,
   },
   title: {
     fontSize: 22,
@@ -51,5 +62,23 @@ const styles = StyleSheet.create({
     marginRight: 20,
     flexDirection: "row",
     alignItems: "center",
+  },
+  itemTxt: {
+    fontSize: 14,
+    fontWeight: "600",
+    borderRadius: 10,
+    color: Colors.black,
+    marginBottom: 8,
+  },
+  itemRating: {
+    fontSize: 14,
+    fontWeight: "600",
+    borderRadius: 10,
+    color: Colors.black,
+    marginLeft: 5,
+  },
+  itemReviews: {
+    fontSize: 14,
+    color: "#999",
   },
 });

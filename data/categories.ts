@@ -1,5 +1,3 @@
-import CategoryButton from "@/components/CategoryButton"
-
 const destinationCategories=[
     {
         title:"All",

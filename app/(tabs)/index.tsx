@@ -13,7 +13,6 @@ import {
 import { useHeaderHeight } from "@react-navigation/elements";
 import listingData from "@/data/destinations.json";
 import Colors from "@/constants/Colors";
-import { SearchBar } from "react-native-screens";
 import CategoryButton from "@/components/CategoryButton";
 import { useState } from "react";
 import Listings from "@/components/Listings";
