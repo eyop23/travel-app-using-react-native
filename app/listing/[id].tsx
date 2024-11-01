@@ -1,12 +1,14 @@
+import { useLocalSearchParams } from "expo-router";
 import { StyleSheet, View, Text } from "react-native";
-const page = () => {
+const ListingDetails = () => {
+  const { id } = useLocalSearchParams();
   return (
     <View style={styles.container}>
-      <Text>Category</Text>
+      <Text>Listing Detail {id}</Text>
     </View>
   );
 };
-export default page;
+export default ListingDetails;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -10,7 +10,10 @@ import React, { useRef, useState } from "react";
 // import { ScrollView } from "react-native-reanimated/lib/typescript/Animated";
 import destinationCategories from "@/data/categories";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-const CategoryButton = () => {
+type Props = {
+  onCategoryChanged: (category: string) => void;
+};
+const CategoryButton = ({ onCategoryChanged }: Props) => {
   const scrollRef = useRef<ScrollView>(null);
   const itemRef = useRef<TouchableOpacity[] | null[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -23,6 +26,7 @@ const CategoryButton = () => {
       );
       scrollRef.current?.scrollTo({ x: px, y: 0, animated: true }); // Use px for scrolling
     });
+    onCategoryChanged(destinationCategories[index].title)
     // selected?.measure((x) => {
     //   console.log(x);
     //   scrollRef.current?.scrollTo({ x: x, y: 0, animated: true });
